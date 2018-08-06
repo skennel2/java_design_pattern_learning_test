@@ -4,6 +4,11 @@ public class fillableCoffeeMachineImpl implements fillableCoffeeMachine{
 
 	private CoffeeMachine coffeeMachine;
 	
+	public fillableCoffeeMachineImpl(CoffeeMachine coffeeMachine) {
+		super();
+		this.coffeeMachine = coffeeMachine;
+	}
+
 	@Override
 	public void showMenu() {
 		coffeeMachine.showMenu();
@@ -21,7 +26,7 @@ public class fillableCoffeeMachineImpl implements fillableCoffeeMachine{
 
 	@Override
 	public void fillCoffeeBean(long amountOfCoffeeBean) {
-		
+		System.out.println("coffee bean filled");
 	}
 	
 }

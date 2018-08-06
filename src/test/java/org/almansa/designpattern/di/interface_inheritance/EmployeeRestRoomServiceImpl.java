@@ -4,6 +4,11 @@ public class EmployeeRestRoomServiceImpl implements EmployeeRestRoomService{
 
 	private CoffeeMachine coffeeMachine;
 	
+	public EmployeeRestRoomServiceImpl(CoffeeMachine coffeeMachine) {
+		super();
+		this.coffeeMachine = coffeeMachine;
+	}
+
 	@Override
 	public Coffee getCoffee(String coffeeName) {
 		return coffeeMachine.makeCoffee(coffeeName);
