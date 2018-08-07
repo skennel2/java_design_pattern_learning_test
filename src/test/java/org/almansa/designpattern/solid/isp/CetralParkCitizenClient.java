@@ -1,19 +1,24 @@
 package org.almansa.designpattern.solid.isp;
 
+/**
+ * 
+ * @author skennel
+ *
+ */
 public class CetralParkCitizenClient {
-	private CokeVendingMachine cokeVendingMachine;
+	private VendingMachine<Coke> cokeVendingMachine;
 
-	public CetralParkCitizenClient(CokeVendingMachine cokeVendingMachine) {
+	public CetralParkCitizenClient(VendingMachine<Coke> cokeVendingMachine) {
 		super();
 		this.cokeVendingMachine = cokeVendingMachine;
 	}
 
-	public CokeAndChangeDTO getCoke(long amountOfCoin) {
+	public CokeAndChange getCoke(long amountOfCoin) {
 		cokeVendingMachine.acceptCoin(amountOfCoin);
 		
-		Coke coke = cokeVendingMachine.dispenseCoke();
+		Coke coke = cokeVendingMachine.dispense();
 		long change = cokeVendingMachine.giveChange();
 
-		return new CokeAndChangeDTO(coke, change);
+		return new CokeAndChange(coke, change);
 	}
 }

@@ -7,17 +7,17 @@ import org.junit.Test;
 public class TestClient {
 	@Test
 	public void cetralParkClientTest() {
-		CokeVendingMachine cokeVendingMachine = new FilableCokeVendingMachine(10, 30, 1000);
+		VendingMachine<Coke> cokeVendingMachine = new FilableCokeVendingMachine(10, 30, 1000);
 		
 		CetralParkCitizenClient centralPark = new CetralParkCitizenClient(cokeVendingMachine);
-		CokeAndChangeDTO cokeAndChange = centralPark.getCoke(1200);
+		CokeAndChange cokeAndChange = centralPark.getCoke(1200);
 		
 		assertEquals(200, cokeAndChange.getChange());
 	}
 	
 	@Test
 	public void cetralParkManagerClient() {
-		CokeFilable cokeFilable = new FilableCokeVendingMachine(10, 30, 1000);
+		FilableMachine cokeFilable = new FilableCokeVendingMachine(10, 30, 1000);
 		
 		CetralParkManagerClient centralPark = new CetralParkManagerClient(cokeFilable);
 		centralPark.fillCoke(5);
@@ -28,7 +28,7 @@ public class TestClient {
 	
 	@Test(expected = IllegalStateException.class)
 	public void cetralParkManagerClientOverTheCapacity() {
-		CokeFilable cokeFilable = new FilableCokeVendingMachine(10, 30, 1000);
+		FilableMachine cokeFilable = new FilableCokeVendingMachine(10, 30, 1000);
 		
 		CetralParkManagerClient centralPark = new CetralParkManagerClient(cokeFilable);
 		centralPark.fillCoke(200);

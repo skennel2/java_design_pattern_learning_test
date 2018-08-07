@@ -1,6 +1,6 @@
 package org.almansa.designpattern.solid.isp;
 
-public interface CokeFilable {
+public interface FilableMachine {
 	long getMaxCapacity();
 
 	long getRemainingCapacity();

@@ -1,6 +1,12 @@
 package org.almansa.designpattern.solid.isp;
 
-public class FilableCokeVendingMachine implements CokeVendingMachine, CokeFilable {
+/**
+ * FilableCokeVendingMachine는 CetralParkCitizenClient, CetralParkManagerClient 두가지 클라이언트에서 사용된다. 
+ * 
+ * @author skennel
+ *
+ */
+public class FilableCokeVendingMachine implements VendingMachine<Coke>, FilableMachine {
 
 	private long remainingCoin;
 
@@ -33,7 +39,7 @@ public class FilableCokeVendingMachine implements CokeVendingMachine, CokeFilabl
 	}
 
 	@Override
-	public Coke dispenseCoke() {
+	public Coke dispense() {
 		if(remainingCoin < priceOfCoke) {
 			throw new IllegalStateException("잔돈이 부족합니다.");
 		}

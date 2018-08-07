@@ -1,14 +1,14 @@
 package org.almansa.designpattern.solid.isp;
 
-public class CokeAndChangeDTO {
+public class CokeAndChange {
 	private Coke coke;
 	private long change;
 
-	public CokeAndChangeDTO() {
+	public CokeAndChange() {
 		super();
 	}
 
-	public CokeAndChangeDTO(Coke coke, long change) {
+	public CokeAndChange(Coke coke, long change) {
 		super();
 		this.coke = coke;
 		this.change = change;

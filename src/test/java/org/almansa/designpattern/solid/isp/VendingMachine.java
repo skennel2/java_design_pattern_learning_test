@@ -1,11 +1,11 @@
 package org.almansa.designpattern.solid.isp;
 
-public interface CokeVendingMachine {
+public interface VendingMachine<T> {
 	long getRemaingCoin();
 
 	long giveChange();
 	
 	void acceptCoin(long amountOfCoin);
 
-	Coke dispenseCoke();
+	T dispense();
 }
