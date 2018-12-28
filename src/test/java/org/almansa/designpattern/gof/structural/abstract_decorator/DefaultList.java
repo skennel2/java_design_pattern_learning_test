@@ -35,5 +35,4 @@ public class DefaultList implements List {
 	public int size() {
 		return list.size();
 	}
-
 }
