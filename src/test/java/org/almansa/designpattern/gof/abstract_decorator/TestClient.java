@@ -6,29 +6,40 @@ public class TestClient {
 
 	@Test(expected = IllegalArgumentException.class)
 	public void notNullableList() {
-		List notNullableList = new NotNullableList(new DefaultList());
+		List notNullableList = NotNullableList.decorate(new DefaultList());
 		notNullableList.add(null);
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
 	public void uniqueItemList() {
-		List uniqueItemList = new UniqueItemList(new DefaultList());
+		List uniqueItemList = UniqueItemList.decorate(new DefaultList());
 		uniqueItemList.add("Hi");
 		uniqueItemList.add("Hi");
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
 	public void uniqueItemAndNotNullableList() {
-		List uniqueItemList = new UniqueItemList(new DefaultList());		
-		List uniqueAndNotNullable = new NotNullableList(uniqueItemList);		
+		List uniqueItemList = UniqueItemList.decorate(new DefaultList());		
+		List uniqueAndNotNullable = NotNullableList.decorate(uniqueItemList);		
 		uniqueAndNotNullable.add(null);
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
 	public void uniqueItemAndNotNullableList2() {
-		List uniqueItemList = new UniqueItemList(new DefaultList());		
-		List uniqueAndNotNullable = new NotNullableList(uniqueItemList);		
+		List uniqueItemList = UniqueItemList.decorate(new DefaultList());		
+		List uniqueAndNotNullable = NotNullableList.decorate(uniqueItemList);		
 		uniqueAndNotNullable.add("Hi");
 		uniqueAndNotNullable.add("Hi");
+	}
+	
+	@Test(expected = UnsupportedOperationException.class)
+	public void unmodifableList() {
+		List uniqueItemList = UniqueItemList.decorate(new DefaultList());		
+		List uniqueAndNotNullable = NotNullableList.decorate(uniqueItemList);		
+		uniqueAndNotNullable.add("Hi");
+		uniqueAndNotNullable.add("Hello");
+
+		List unmodifableList = UnmodifableList.decorate(uniqueAndNotNullable);
+		unmodifableList.add("un suport");
 	}
 }

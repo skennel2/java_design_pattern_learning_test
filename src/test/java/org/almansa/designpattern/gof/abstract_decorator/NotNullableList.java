@@ -6,6 +6,10 @@ public class NotNullableList extends AbstractListDecorator {
 		super(decorated);
 	}
 
+	public static List decorate(List list) {
+		return new NotNullableList(list);
+	}
+
 	@Override
 	public void add(Object item) {
 		if (item == null) {
@@ -13,5 +17,5 @@ public class NotNullableList extends AbstractListDecorator {
 		}
 
 		super.add(item);
-	}	
+	}
 }

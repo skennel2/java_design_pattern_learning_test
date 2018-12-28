@@ -1,9 +1,13 @@
 package org.almansa.designpattern.gof.abstract_decorator;
 
-public class UniqueItemList extends AbstractListDecorator{
+public class UniqueItemList extends AbstractListDecorator {
 
 	public UniqueItemList(List decorated) {
-		super(decorated);		
+		super(decorated);
+	}
+
+	public static List decorate(List list) {
+		return new UniqueItemList(list);
 	}
 
 	@Override
@@ -11,7 +15,7 @@ public class UniqueItemList extends AbstractListDecorator{
 		if (super.contains(item)) {
 			throw new IllegalArgumentException("item must not be null");
 		}
-		
+
 		super.add(item);
 	}
 }

@@ -15,7 +15,7 @@ public class CetralParkCitizenClient {
 
 	public CokeAndChange getCoke(long amountOfCoin) {
 		cokeVendingMachine.acceptCoin(amountOfCoin);
-		
+
 		Coke coke = cokeVendingMachine.dispense();
 		long change = cokeVendingMachine.giveChange();
 

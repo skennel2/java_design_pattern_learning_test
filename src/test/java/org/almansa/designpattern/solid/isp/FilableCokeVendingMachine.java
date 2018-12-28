@@ -1,7 +1,8 @@
 package org.almansa.designpattern.solid.isp;
 
 /**
- * FilableCokeVendingMachine는 CetralParkCitizenClient, CetralParkManagerClient 두가지 클라이언트에서 사용된다. 
+ * FilableCokeVendingMachine는 CetralParkCitizenClient, CetralParkManagerClient
+ * 두가지 클라이언트에서 사용된다.
  * 
  * @author skennel
  *
@@ -31,26 +32,26 @@ public class FilableCokeVendingMachine implements VendingMachine<Coke>, FilableM
 
 	@Override
 	public void acceptCoin(long amountOfCoin) {
-		if(amountOfCoin < 0) {
+		if (amountOfCoin < 0) {
 			throw new IllegalArgumentException();
 		}
-		
+
 		remainingCoin = remainingCoin + amountOfCoin;
 	}
 
 	@Override
 	public Coke dispense() {
-		if(remainingCoin < priceOfCoke) {
+		if (remainingCoin < priceOfCoke) {
 			throw new IllegalStateException("잔돈이 부족합니다.");
 		}
-		
-		if(remainingCoke <= 0) {
+
+		if (remainingCoke <= 0) {
 			throw new IllegalStateException("재고가 부족합니다.");
 		}
-		
+
 		remainingCoin = remainingCoin - priceOfCoke;
 		remainingCoke--;
-		
+
 		return new Coke("Pepsi");
 	}
 
@@ -61,24 +62,24 @@ public class FilableCokeVendingMachine implements VendingMachine<Coke>, FilableM
 
 	@Override
 	public void fillCoke(long amount) {
-		if(amount + remainingCoke > maxCapacity) {
+		if (amount + remainingCoke > maxCapacity) {
 			throw new IllegalStateException("수용량 초과");
 		}
-		
+
 		remainingCoke = remainingCoke + amount;
 	}
 
 	@Override
 	public long giveChange() {
 		long change = remainingCoin;
-		
+
 		remainingCoin = 0;
-		
+
 		return change;
 	}
 
 	@Override
-	public long getRemainingCapacity() {		
+	public long getRemainingCapacity() {
 		return remainingCoke;
 	}
 

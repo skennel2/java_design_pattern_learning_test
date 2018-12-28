@@ -2,17 +2,17 @@ package org.almansa.designpattern.gof.abstract_decorator;
 
 import java.util.ArrayList;
 
-public class DefaultList implements List{
+public class DefaultList implements List {
 
 	private ArrayList<Object> list = new ArrayList<>();
-	
+
 	@Override
-	public boolean contains(Object item) {		
+	public boolean contains(Object item) {
 		return list.contains(item);
 	}
 
 	@Override
-	public Object get(int index) {		
+	public Object get(int index) {
 		return list.get(index);
 	}
 
@@ -32,7 +32,7 @@ public class DefaultList implements List{
 	}
 
 	@Override
-	public int size() {		
+	public int size() {
 		return list.size();
 	}
 

@@ -4,6 +4,6 @@ public interface FilableMachine {
 	long getMaxCapacity();
 
 	long getRemainingCapacity();
-	
+
 	void fillCoke(long amount);
 }
