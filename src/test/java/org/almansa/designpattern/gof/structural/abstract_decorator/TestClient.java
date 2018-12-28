@@ -1,9 +1,11 @@
-package org.almansa.designpattern.gof.abstract_decorator;
+package org.almansa.designpattern.gof.structural.abstract_decorator;
 
 import org.junit.Test;
 
+// 일반적으로 데코레이터클래스를 이용하여 특정 인스턴스의 기능을 확장하는 주체는 개발자이다. 
+// 이것이 Proxy와의 큰 차이이다. 
 public class TestClient {
-
+	
 	@Test(expected = IllegalArgumentException.class)
 	public void notNullableList() {
 		List notNullableList = NotNullableList.decorate(new DefaultList());

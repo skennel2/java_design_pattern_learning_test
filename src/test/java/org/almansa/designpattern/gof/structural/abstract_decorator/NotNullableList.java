@@ -1,4 +1,4 @@
-package org.almansa.designpattern.gof.abstract_decorator;
+package org.almansa.designpattern.gof.structural.abstract_decorator;
 
 public class NotNullableList extends AbstractListDecorator {
 

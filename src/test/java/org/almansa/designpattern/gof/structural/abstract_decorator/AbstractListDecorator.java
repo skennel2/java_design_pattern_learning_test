@@ -1,4 +1,4 @@
-package org.almansa.designpattern.gof.abstract_decorator;
+package org.almansa.designpattern.gof.structural.abstract_decorator;
 
 /**
  * 파생될 자식 Decorator들의 뼈대가 된다.
