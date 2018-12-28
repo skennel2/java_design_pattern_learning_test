@@ -20,14 +20,14 @@ public class TestClient {
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
-	public void uniqueItemAndNotNullableList() {
+	public void decorator_체이닝() {
 		List uniqueItemList = UniqueItemList.decorate(new DefaultList());		
 		List uniqueAndNotNullable = NotNullableList.decorate(uniqueItemList);		
 		uniqueAndNotNullable.add(null);
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
-	public void uniqueItemAndNotNullableList2() {
+	public void decorator_체이닝2() {
 		List uniqueItemList = UniqueItemList.decorate(new DefaultList());		
 		List uniqueAndNotNullable = NotNullableList.decorate(uniqueItemList);		
 		uniqueAndNotNullable.add("Hi");
