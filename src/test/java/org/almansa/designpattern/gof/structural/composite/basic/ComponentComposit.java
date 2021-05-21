@@ -1,4 +1,4 @@
-package org.almansa.designpattern.gof.structural.composite;
+package org.almansa.designpattern.gof.structural.composite.basic;
 
 import java.util.ArrayList;
 import java.util.List;

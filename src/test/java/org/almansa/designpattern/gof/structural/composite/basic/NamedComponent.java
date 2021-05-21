@@ -1,4 +1,4 @@
-package org.almansa.designpattern.gof.structural.composite;
+package org.almansa.designpattern.gof.structural.composite.basic;
 
 public class NamedComponent implements Component {
 
